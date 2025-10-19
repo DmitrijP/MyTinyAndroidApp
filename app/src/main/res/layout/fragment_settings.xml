@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="de.dmitrij.patuk.ourapp.ui.settings.SettingsViewModel" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.settings.SettingsFragment">
+
+        <TextView
+            android:id="@+id/settings_fragment_title"
+            style="@style/MaterialAlertDialog.Material3.Title.Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{viewModel.title}" />
+
+        <Button
+            android:id="@+id/settings_fragment_logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:onClick="@{() -> viewModel.logout()}" />
+
+    </FrameLayout>
+</layout>

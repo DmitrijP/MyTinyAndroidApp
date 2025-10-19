@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.2
+    container_name: keycloak-https
+    command:
+      - start-dev
+      - --https-certificate-file=/opt/keycloak/certs/keycloak.crt
+      - --https-certificate-key-file=/opt/keycloak/certs/keycloak.key
+      - --https-port=8443
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    volumes:
+      - ./keycloak-cert:/opt/keycloak/certs
+    ports:
+      - "8443:8443"

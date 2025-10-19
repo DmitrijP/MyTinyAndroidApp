@@ -1,0 +1,20 @@
+[ req ]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+prompt             = no
+
+[ req_distinguished_name ]
+C = DE
+ST = Baden Wuerttemberg
+L = Mannehim
+O = My Cool App COrp
+OU = Team My Cool App
+CN = 10.0.2.2
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+IP.1 = 10.0.2.2
+
