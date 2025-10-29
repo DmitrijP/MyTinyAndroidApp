@@ -1,5 +1,7 @@
 # Navigation mit LoginView
 
+Link zum Tutorial: https://youtu.be/sBJysiI7N48
+
 In diesem Tutoriel bauen wir eine LoginView mit Navigation die es uns erlaubt die View im Vollbild darzustellen.
 Dabei werden die Bottom und Top Bar ausgeblendet. Weiterhin kümmern wir uns um richtiges Verhalten der Navigationshistorie.
 So das der Zurück Button wie erwartet funktioniert.
