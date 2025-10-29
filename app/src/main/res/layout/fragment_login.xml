@@ -1,22 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="vm"
             type="de.dmitrij.patuk.ourapp.ui.login.LoginViewModel" />
     </data>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.login.LoginFragment">
-
-        <Button
-            android:layout_width="match_parent"
+        tools:context=".ui.login.LoginFragment"
+        android:background="@drawable/maingradient"
+        >
+        <ImageView
+            android:id="@+id/login_fragment_logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="@color/main"
+            android:id="@+id/login_fragment_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Welcome to your DMS"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/login_fragment_subtitle"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:text="Please use the Login Button to authenticate"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Login"
+            android:backgroundTint="@color/main"
+            android:layout_margin="@dimen/main_margin"
             android:onClick="@{v -> vm.startLoginProcess()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/separator"
             />
 
-    </LinearLayout>
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/main"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintBottom_toTopOf="@id/footer_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/footer_textview"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

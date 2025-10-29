@@ -22,6 +22,9 @@ import android.widget.Toast;
 import dagger.hilt.android.AndroidEntryPoint;
 import de.dmitrij.patuk.ourapp.R;
 import de.dmitrij.patuk.ourapp.databinding.FragmentLoginBinding;
+import de.dmitrij.patuk.ourapp.navigation.MyNavDestinations;
+import de.dmitrij.patuk.ourapp.navigation.MyNavigator;
+import de.dmitrij.patuk.ourapp.ui.MainActivity;
 
 @AndroidEntryPoint
 public class LoginFragment extends Fragment {
@@ -60,7 +63,7 @@ public class LoginFragment extends Fragment {
         });
 
         viewModel.getLoginSuccess().observe(this.getViewLifecycleOwner(), v -> {
-            Toast.makeText(requireContext(), "Login erfolgreich.", Toast.LENGTH_LONG).show();
+            ((MyNavigator)requireActivity()).navigate(MyNavDestinations.HOME);
         });
 
         viewModel.getLoginError().observe(this.getViewLifecycleOwner(), v -> {

@@ -11,10 +11,15 @@
     >
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_activity_app_bar"
+        android:background="@color/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/main_activity_toolbar"
             android:layout_width="match_parent"
+            app:titleTextColor="@color/white"
+            app:navigationIconTint="@color/white"
             android:layout_height="wrap_content" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -28,6 +33,8 @@
         app:navGraph="@navigation/main_nav_graph"
         />
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:background="@color/main"
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

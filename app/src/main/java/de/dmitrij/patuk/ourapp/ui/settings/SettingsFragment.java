@@ -16,6 +16,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
 import de.dmitrij.patuk.ourapp.databinding.FragmentSettingsBinding;
+import de.dmitrij.patuk.ourapp.navigation.MyNavDestinations;
+import de.dmitrij.patuk.ourapp.navigation.MyNavigator;
 
 @AndroidEntryPoint
 public class SettingsFragment extends Fragment {
@@ -31,8 +33,7 @@ public class SettingsFragment extends Fragment {
         binding.setLifecycleOwner(this);
 
         vm.getLogoutEvent().observe(getViewLifecycleOwner(), v -> {
-            // context oder andere UI Element zugreifen will
-            Snackbar.make(binding.getRoot(), "Logout", Snackbar.LENGTH_SHORT).show();
+            ((MyNavigator)requireActivity()).navigate(MyNavDestinations.LOGIN);
         });
 
         return binding.getRoot();
